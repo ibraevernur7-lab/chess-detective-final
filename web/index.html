@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="kk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171b32">
+  <title>Шахмат детективі — есептер мен толық партия</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="modes.css">
+  <link rel="stylesheet" href="arena.css">
+  <script defer src="engine.js"></script>
+  <script defer src="cases.js"></script>
+  <script defer src="learn.js"></script>
+  <script defer src="app.js"></script>
+  <script defer src="match.js"></script>
+  <script defer src="arena.js"></script>
+  <script defer src="modes.js"></script>
+</head>
+<body>
+  <a id="skip-content" class="skip" href="#main">Ойынға өту</a>
+  <header class="header"><div class="wrap header-inner">
+    <a class="brand" href="#modes" aria-label="Шахмат детективі, басты мәзір"><span class="brand-seal" aria-hidden="true"><img src="assets/pieces/wN.png" alt=""></span>Шахмат детективі</a>
+    <nav aria-label="Ойын мәзірі"><a id="mode-menu-link" href="#modes" class="header-btn" hidden>Режимдер</a><button id="open-cases" hidden class="header-btn" type="button">Істер жинағы</button><button id="open-progress" hidden class="header-btn" type="button">Нәтижелер</button></nav>
+  </div></header>
+  <main id="main" class="wrap">
+    <section id="mode-view" aria-labelledby="modes-title">
+      <div class="mode-hero">
+        <div class="mode-hero-copy"><h1 id="modes-title" tabindex="-1">Ойын режимін таңда</h1><p>Ақтармен ойнайсың. Фигураны таңдап, баратын ұяны түрт.</p></div>
+      </div>
+      <div class="mode-options">
+        <a class="mode-card mode-puzzle" id="choose-detective" href="#detective">
+          <div class="mode-card-content"><h2>Шахмат детективі</h2><p>Тоғыз есепте қос шабуылды тап, мат қой немесе қарсыластың фигурасын ұтып ал.</p><span class="mode-action">Есептерді ашу</span></div>
+          <div class="mode-diagram" id="mini-case" aria-hidden="true"></div>
+        </a>
+        <a class="mode-card mode-match" id="choose-match" href="#match">
+          <div class="mode-card-content"><h2>AI-ға қарсы партия</h2><p>Алғашқы жүрістен бастап ойна. Соңында өз жүрісіңді AI ұсынған жүріспен салыстыр.</p><span class="mode-action">Партияға кіру</span></div>
+          <div class="mode-diagram" id="mini-match" aria-hidden="true"></div>
+        </a>
+      </div>
+    </section>
+    <div id="puzzle-view" hidden>
+    <section class="intro" aria-labelledby="case-title">
+      <div class="intro-copy"><div class="case-meta"><span id="case-number">Іс 01</span><span class="line" aria-hidden="true"></span><span id="case-theme">Қос шабуыл</span></div>
+        <h1 id="case-title">Шахмат детективі</h1><p id="case-goal">Тақтадан тактикалық жүрісті тап.</p>
+      </div>
+      <div class="intro-art" aria-hidden="true"></div>
+    </section>
+    <div class="game-layout">
+      <section class="board-area" aria-label="Ойын">
+        <div class="board-top"><h2>Шахмат тақтасы</h2><span id="turn" class="turn"><i aria-hidden="true"></i>Ақтардың жүрісі</span></div>
+        <div class="board-frame"><div id="board" class="board" role="group" tabindex="-1" aria-label="Шахмат тақтасы. Ұялар арасында бағыттау пернелерімен жылжуға болады."></div></div>
+        <div id="feedback" class="feedback" role="status" aria-live="polite"><span id="feedback-mark" class="feedback-mark" aria-hidden="true">i</span><div><strong id="feedback-title">Ақтармен ойнайсың</strong><p id="feedback-copy">Алдымен фигураны, содан кейін баратын ұяны бас.</p></div></div>
+        <div class="board-actions"><button id="hint" type="button" class="button light">Ишара алу</button><button id="restart" type="button" class="text-btn">Қайта бастау</button><button id="next" type="button" class="button accent" hidden>Келесі іс</button></div>
+        <div id="hint-box" class="hint-box" hidden><strong>Ишара</strong><p id="hint-text"></p><button id="reveal" type="button" class="underline-btn">Жүрісті көрсету</button></div>
+      </section>
+      <aside class="notebook" aria-label="Тергеу дәптері">
+        <div class="notebook-top"><div class="notebook-mark" aria-hidden="true"><i></i><i></i><i></i></div><h2>Тергеу дәптері</h2></div>
+        <div class="notebook-content">
+          <section class="log-section"><div class="section-heading"><h3>Жүрістер журналы</h3><span id="log-count" class="number-chip">0</span></div><p id="empty-log" class="empty-log">Алғашқы жүрісің осында жазылады.</p><ol id="log" class="move-list"></ol></section>
+          <section class="skill-section"><h3>Осы тактиканы меңгеру</h3><div class="skill-line"><span id="skill-name">Қос шабуыл</span><strong id="skill-value">50%</strong></div><div class="meter"><span id="skill-bar"></span></div><p id="skill-caption" class="measure-caption"></p></section>
+          <details id="reason" class="reason"><summary>Шешім қалай шықты?</summary><p id="analysis-line"></p><p id="bayes-line"></p><p id="next-explain"></p></details>
+        </div>
+      </aside>
+    </div>
+    </div>
+    <section id="arena-view" hidden aria-label="AI-ға қарсы толық партия"></section>
+    <footer><strong>Шахмат детективі</strong><span>Ибраев Ернур · Көшерәлі Абдурахман · Мұратұлы Диас</span></footer>
+  </main>
+  <dialog id="cases-dialog" aria-labelledby="cases-title"><div class="dialog-head"><h2 id="cases-title">Істер жинағы</h2><button type="button" class="close" data-close aria-label="Жабу">×</button></div><div class="filters"><label>Тактика<select id="theme-filter"><option value="">Барлық тактика</option></select></label><label>Деңгей<select id="level-filter"><option value="">Барлық деңгей</option><option value="1">1 · Жеңіл</option><option value="2">2 · Орташа</option><option value="3">3 · Күрделі</option></select></label></div><div id="case-list" class="case-list"></div></dialog>
+  <dialog id="progress-dialog" aria-labelledby="progress-title"><div class="dialog-head"><h2 id="progress-title">Нәтижелер</h2><button type="button" class="close" data-close aria-label="Жабу">×</button></div><p id="progress-summary" class="dialog-lead"></p><div id="stats" class="stats"></div><label class="target">Келесі есепте көздеген табыс ықтималдығы<select id="target"><option value="0.55">55% · Сыналғым келеді</option><option value="0.7" selected>70% · Теңгерімді</option><option value="0.85">85% · Бекіткім келеді</option></select></label><p id="suggestion" class="suggestion"></p><button id="open-suggested" type="button" class="button accent">Ұсынылған істі ашу</button><p id="storage-note" class="small-note">Нәтиже осы браузерде сақталады.</p></dialog>
+  <dialog id="promotion-dialog" aria-labelledby="promotion-title"><div class="dialog-head"><h2 id="promotion-title">Пешканы алмастыр</h2><button data-close type="button" class="close" aria-label="Жабу">×</button></div><div id="promotions" class="promotion-options"></div></dialog>
+  <noscript>Шахмат тақтасын ашу үшін браузерде JavaScript қос.</noscript>
+</body>
+</html>

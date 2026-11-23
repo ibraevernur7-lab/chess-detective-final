@@ -1,0 +1,91 @@
+.header-btn[href] { text-decoration:none; display:inline-flex; align-items:center; }
+body[data-mode="modes"] .header-inner { min-height:62px; }
+.mode-hero {
+  position:relative;
+  isolation:isolate;
+  display:flex;
+  align-items:flex-end;
+  min-height:clamp(220px,27vw,325px);
+  margin:26px 0 22px;
+  background:#172623 url('assets/knight.jpg') center 52% / cover no-repeat;
+  border-radius:10px;
+  overflow:hidden;
+  color:#fffae9;
+}
+.mode-hero::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(90deg,rgba(15,25,28,.97),rgba(15,28,28,.80) 34%,rgba(18,31,31,.10) 82%);
+}
+.mode-hero-copy { padding:clamp(22px,3.7vw,50px); max-width:70%; }
+.mode-hero h1 {
+  font:500 clamp(2.45rem,5.4vw,5rem)/1.02 var(--title);
+  letter-spacing:-.055em;
+  max-width:9em;
+  text-wrap:balance;
+}
+.mode-hero p { color:#f4eedd; max-width:29rem; font-size:1.05rem; line-height:1.5; margin-top:17px; }
+.mode-options { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.mode-card {
+  --card-surface:#fffcf4;
+  --card-ink:#142f28;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) clamp(80px,9vw,125px);
+  align-items:center;
+  gap:clamp(12px,1.7vw,24px);
+  border:1px solid #cbc9b9;
+  border-radius:9px;
+  padding:clamp(19px,2vw,30px);
+  color:var(--card-ink);
+  text-decoration:none;
+  background:var(--card-surface);
+  transition:border-color .14s, box-shadow .14s;
+}
+.mode-card:hover { border-color:#798876; box-shadow:0 3px 15px #18271b14; }
+.mode-card h2 { font:600 clamp(1.4rem,2.15vw,2.2rem)/1.12 var(--title); letter-spacing:-.04em; }
+.mode-card p { max-width:30ch; margin-top:8px; line-height:1.45; font-size:1rem; }
+.mode-action {
+  display:inline-block;
+  margin-top:19px;
+  padding:8px 13px;
+  border-radius:4px;
+  font-size:.92rem;
+  font-weight:680;
+  color:var(--card-surface);
+  background:var(--card-ink);
+}
+.mode-match { --card-surface:#233c34; --card-ink:#fff7df; border-color:#233c34; }
+.mode-match p { color:#e4e9dd; }
+.mode-diagram {
+  width:100%;
+  aspect-ratio:1;
+  display:grid;
+  grid-template-columns:repeat(8,1fr);
+  grid-template-rows:repeat(8,1fr);
+  border:3px solid #536757;
+  border-radius:3px;
+  overflow:hidden;
+  box-shadow:0 4px 9px #101e2020;
+}
+.mode-diagram span { display:grid; min-width:0; min-height:0; place-items:center; background:#f1ead9; }
+.mode-diagram .mini-dark { background:#849b87; }
+.mode-diagram img { display:block; width:100%; height:100%; object-fit:contain; }
+@media(max-width:800px) {
+  .mode-options { grid-template-columns:1fr; gap:12px; }
+  .mode-card { grid-template-columns:minmax(0,1fr) clamp(82px,17vw,118px); }
+  .mode-card p { max-width:47ch; }
+}
+@media(max-width:600px) {
+  body[data-mode="modes"] .header-inner { min-height:53px; }
+  .mode-hero { margin:13px 0; min-height:185px; border-radius:7px; background-position:64% 50%; }
+  .mode-hero-copy { padding:18px 16px; max-width:80%; }
+  .mode-hero h1 { font-size:clamp(2.1rem,8vw,2.9rem); max-width:7em; }
+  .mode-hero p { font-size:.93rem; line-height:1.35; margin-top:10px; }
+  .mode-card { padding:16px; gap:12px; }
+  .mode-card p { margin-top:6px; font-size:.93rem; }
+  .mode-action { margin-top:10px; font-size:.85rem; }
+  body[data-mode="detective"] .brand { font-size:0; gap:0; }
+  body[data-mode="detective"] .brand-seal { display:grid; }
+}

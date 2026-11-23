@@ -1,0 +1,11 @@
+{
+  "name": "shakhmat-detektivi",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Қазақ тіліндегі интерактивті шахмат тактикасы",
+  "scripts": {
+    "test": "node --test",
+    "test:report": "node scripts/report.js"
+  },
+  "engines": {"node": ">=18.19"}
+}

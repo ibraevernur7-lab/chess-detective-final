@@ -1,0 +1,31 @@
+{
+  "command": "npm test",
+  "counts": {
+    "tests": 45,
+    "pass": 45,
+    "fail": 0,
+    "skipped": 0
+  },
+  "suite": [
+    "cases.test.js",
+    "engine.test.js",
+    "learn.test.js",
+    "match.test.js"
+  ],
+  "cases": 9,
+  "benchmark": {
+    "fen": "3q3k/5N2/8/8/8/8/P7/6K1 b - - 1 1",
+    "depth": 2,
+    "chosenReply": "h8h7",
+    "alphaBeta": {
+      "score": 433,
+      "nodes": 19,
+      "cutoffs": 2
+    },
+    "minimax": {
+      "score": 433,
+      "nodes": 43,
+      "cutoffs": 0
+    }
+  }
+}
