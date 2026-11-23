@@ -42,10 +42,10 @@
 | [screenshots/](screenshots/) | Компьютер және телефон өлшеміндегі ойын экрандары |
 | [docs/Technical_Report_KZ.pdf](docs/Technical_Report_KZ.pdf) | Алгоритмдер, формулалар, өлшемдер, шектеулер, дереккөздер |
 | [docs/Topic_Proposal_KZ.pdf](docs/Topic_Proposal_KZ.pdf) | Оқытушыға арналған тақырып ұсынысы |
-| [docs/Defense_KZ.pdf](docs/Defense_KZ.pdf) | Үш адамға бөлінген қорғау сөзі, демо реті және жеке сұрақтарға жауаптар |
+| [docs/Defense_KZ.pdf](docs/Defense_KZ.pdf) | Үш адамға бөлінген 8 минуттық қорғау сөзі және тақтада көрсетілетін жүрістер |
 | [presentation/Chess_Detective_KZ.pptx](presentation/Chess_Detective_KZ.pptx) · [PDF](presentation/Chess_Detective_KZ.pdf) | Өңделетін және көрсетуге дайын слайдтар |
 | [demo/Chess_Detective_KZ.mp4](demo/Chess_Detective_KZ.mp4) | Ойын барысы түсірілген демонстрация |
-| [AI_USAGE_DECLARATION.md](AI_USAGE_DECLARATION.md) · [TEAM_CONTRIBUTION_STATEMENT.md](TEAM_CONTRIBUTION_STATEMENT.md) | AI көмегі туралы мәлімдеме және қатысушылардың үлесін растау парағы |
+| [AI_USAGE_DECLARATION.md](AI_USAGE_DECLARATION.md) · [TEAM_CONTRIBUTION_STATEMENT.md](TEAM_CONTRIBUTION_STATEMENT.md) | AI көмегі туралы мәлімдеме және қатысушылардың үлесі мен қорғаудағы міндеттері |
 
 DOCX нұсқалары тиісті PDF файлдарының қасында орналасқан.
 
